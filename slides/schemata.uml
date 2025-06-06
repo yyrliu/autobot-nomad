@@ -1,0 +1,192 @@
+' PerovskiteSolarCell: src\perovskite_solar_cell_database\schema.py
+@startuml
+left to right direction
+
+' Expanded classes
+class PerovskiteSolarCell {
+  +ref : Ref
+  +cell : Cell
+  +module : Module
+  +substrate : Substrate
+  +etl : ETL
+  +perovskite : Perovskite
+  +perovskite_deposition : PerovskiteDeposition
+  +htl : HTL
+  +backcontact : Backcontact
+  +add : Add
+  +encapsulation : Encapsulation
+  +jv : JV
+  +stabilised : Stabilised
+  +eqe : EQE
+  +stability : Stability
+  +outdoor : Outdoor
+}
+
+class Perovskite {
+  +formula : str = "MAPbI3"
+  +structure : str = "tetragonal"
+  +band_gap : float = 1.55
+  +cations : list<str> = ["MA"]
+  +anions : list<str> = ["I"]
+  +additives : list<Add> = [Add(lay_front=True, lay_front_function="Antireflection")]
+  +ions : list<Ion> = [Ion(element="Pb", oxidation_state="2+", site="B", fraction=1.0)]
+  +formula_normalizer : PerovskiteFormulaNormalizer = PerovskiteFormulaNormalizer()
+}
+
+class PerovskiteDeposition {
+  +number_of_deposition_steps : int = 2
+  +procedure : str = "Spin-coating >> Gas reaction"
+  +aggregation_state_of_reactants : str = "Liquid >> Gas"
+  +synthesis_atmosphere : str = "N2 >> Air"
+  +synthesis_atmosphere_pressure_total : str = "1 atm >> 1 atm"
+  +synthesis_atmosphere_pressure_partial : str = "1 atm >> 1 atm"
+  +synthesis_atmosphere_relative_humidity : str = "0 >> 20"
+  +solvents : str = "DMF; DMSO >> IPA"
+  +solvents_mixing_ratios : str = "4;1 >> 1"
+  +solvents_supplier : str = "Sigma Aldrich; Fisher >> Acros"
+  +solvents_purity : str = "Pro analysis; Puris >> Technical"
+  +reaction_solutions_compounds : str = "PbI2; MAI >> MAI"
+  +reaction_solutions_compounds_supplier : str = "Sigma Aldrich; Dyesol >> Sigma Aldrich"
+  +reaction_solutions_compounds_purity : str = "99.99%; 99.9% >> 99.9%"
+  +reaction_solutions_concentrations : str = "1 M; 1 M >> 0.5 M"
+  +reaction_solutions_volumes : str = "0.1 >> 0.05"
+  +reaction_solutions_age : str = "1.0 >> 0.5"
+  +reaction_solutions_temperature : str = "25 >> 50"
+  +substrate_temperature : str = "25 >> 70"
+  +quenching_induced_crystallisation : bool = True
+  +quenching_media : str = "Chlorobenzene"
+  +quenching_media_mixing_ratios : str = "1"
+  +quenching_media_volume : str = "100.0"
+  +quenching_media_additives_compounds : str = ""
+  +quenching_media_additives_concentrations : str = ""
+  +thermal_annealing_temperature : str = "100"
+  +thermal_annealing_time : str = "60"
+  +thermal_annealing_atmosphere : str = "N2"
+  +thermal_annealing_relative_humidity : str = "0"
+  +thermal_annealing_pressure : str = "1 atm"
+  +solvent_annealing : bool = True
+  +solvent_annealing_timing : str = "After"
+  +solvent_annealing_solvent_atmosphere : str = "DMSO"
+  +solvent_annealing_time : str = "10.0"
+  +solvent_annealing_temperature : str = "90.0"
+  +after_treatment_of_formed_perovskite : str = "UV radiation"
+  +after_treatment_of_formed_perovskite_met : str = "30 min"
+}
+
+together {
+  class Ion {
+    +element : str = "Pb"
+    +oxidation_state : str = "2+"
+    +site : str = "B"
+    +fraction : float = 1.0
+  }
+  class Add
+  class PerovskiteFormulaNormalizer
+}
+
+' Stacked (not expanded) classes
+/'package "Other Sections" {'/
+/'  class Ref'/
+/'  class Cell'/
+/'  class Module'/
+/'  class Substrate'/
+/'  class ETL'/
+/'  class HTL'/
+/'  class Backcontact'/
+/'  class Encapsulation'/
+/'  class JV'/
+/'  class Stabilised'/
+/'  class EQE'/
+/'  class Stability'/
+/'  class Outdoor'/
+/'}'/
+
+' Relationships
+/'PerovskiteSolarCell o-- Ref'/
+/'PerovskiteSolarCell o-- Cell'/
+/'PerovskiteSolarCell o-- Module'/
+/'PerovskiteSolarCell o-- Substrate'/
+/'PerovskiteSolarCell o-- ETL'/
+PerovskiteSolarCell o--- Perovskite
+PerovskiteSolarCell o--- PerovskiteDeposition
+/'PerovskiteSolarCell o-- HTL'/
+/'PerovskiteSolarCell o-- Backcontact'/
+/'PerovskiteSolarCell o-- Add'/
+/'PerovskiteSolarCell o-- Encapsulation'/
+/'PerovskiteSolarCell o-- JV'/
+/'PerovskiteSolarCell o-- Stabilised'/
+/'PerovskiteSolarCell o-- EQE'/
+/'PerovskiteSolarCell o-- Stability'/
+/'PerovskiteSolarCell o-- Outdoor'/
+/'PerovskiteSolarCell o-- "Other Sections"'/
+
+Perovskite o-- "*" Add : additives
+Perovskite o-- "*" Ion : ions
+Perovskite o-- PerovskiteFormulaNormalizer
+
+PerovskiteDeposition o-- "*" Add : additives
+PerovskiteDeposition o-- "*" Ion : ions
+
+@enduml
+
+
+' PerovskiteComposition: src\perovskite_solar_cell_database\composition.py
+
+@startuml
+left to right direction
+
+class PerovskiteComposition
+class PerovskiteCompositionSection
+class CompositeSystem
+class EntryData
+class PerovskiteAIonComponent
+class PerovskiteBIonComponent
+class PerovskiteXIonComponent
+class Impurity
+
+' Ion hierarchy
+class PerovskiteIonComponent
+class PerovskiteIonSection
+class PerovskiteChemicalSection
+class PureSubstance
+class SystemComponent
+
+class PerovskiteAIon
+class PerovskiteBIon
+class PerovskiteXIon
+class PerovskiteIon
+
+' Relationships for PerovskiteComposition
+PerovskiteComposition --|> PerovskiteCompositionSection
+PerovskiteComposition --|> CompositeSystem
+PerovskiteComposition --|> EntryData
+
+PerovskiteCompositionSection o-- PerovskiteAIonComponent : ions_a_site
+PerovskiteCompositionSection o-- PerovskiteBIonComponent : ions_b_site
+PerovskiteCompositionSection o-- PerovskiteXIonComponent : ions_x_site
+PerovskiteCompositionSection o-- Impurity : impurities
+PerovskiteCompositionSection o-- Impurity : additives
+
+' IonComponent hierarchy
+PerovskiteAIonComponent --|> PerovskiteIonComponent
+PerovskiteBIonComponent --|> PerovskiteIonComponent
+PerovskiteXIonComponent --|> PerovskiteIonComponent
+
+PerovskiteIonComponent --|> SystemComponent
+PerovskiteIonComponent --|> PerovskiteIonSection
+
+' IonSection hierarchy
+PerovskiteIonSection --|> PerovskiteChemicalSection
+
+' Ion hierarchy
+PerovskiteAIon --|> PerovskiteIon
+PerovskiteBIon --|> PerovskiteIon
+PerovskiteXIon --|> PerovskiteIon
+
+PerovskiteIon --|> PureSubstance
+PerovskiteIon --|> PerovskiteIonSection
+
+Impurity --|> PureSubstance
+Impurity --|> PerovskiteChemicalSection
+
+@enduml

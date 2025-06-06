@@ -1,0 +1,46 @@
+definitions:
+  name: Countries of the World
+  section_definitions:
+  - base_sections:
+    - nomad.datamodel.data.EntryData
+    name: Country
+    quantities:
+    - name: name
+      type:
+        type_data: str
+        type_kind: python
+    - name: population
+      type:
+        type_data: int32
+        type_kind: numpy
+    - name: area
+      type:
+        type_data: float64
+        type_kind: numpy
+      unit: kilometer ** 2
+    - name: population_density
+      type:
+        type_data: float64
+        type_kind: numpy
+      unit: 1 / kilometer ** 2
+    sub_sections:
+    - description: GDP per capita (constant 2005 US$)
+      name: gdp
+      sub_section: /definitions/section_definitions/1
+    - description: per 1,000 people per year
+      name: birth_rate
+      sub_section: /definitions/section_definitions/1
+  - name: Timeseries
+    quantities:
+    - name: year
+      shape:
+      - '*'
+      type:
+        type_data: int32
+        type_kind: numpy
+    - name: value
+      shape:
+      - '*'
+      type:
+        type_data: float64
+        type_kind: numpy

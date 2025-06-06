@@ -1,0 +1,1374 @@
+{
+  "data": {
+    "m_def": "../upload/raw/scopefoundry_schema_package.archive.yaml#/definitions/section_definitions/ScopeFoundryH5",
+    "h5_file": "test1.h5",
+    "app_name": "SpinBot",
+    "app_settings": [
+      {
+        "name": "data_fname_format",
+        "value": "{timestamp:%y%m%d_%H%M%S}_{measurement.name}.{ext}"
+      },
+      {
+        "name": "sample",
+        "value": "0sybgat4t5zas000r2txy6msjg"
+      },
+      {
+        "name": "save_dir",
+        "value": "C:/Users/lab/Documents/foundry_scope/SpinBot/Ansuman/20250307/Batch 160"
+      }
+    ],
+    "hardware": [
+      {
+        "name": "cbox_stage",
+        "settings": [
+          {
+            "name": "center_CAM_x",
+            "value": "10000",
+            "unit": "um"
+          },
+          {
+            "name": "center_CAM_y",
+            "value": "10000",
+            "unit": "um"
+          },
+          {
+            "name": "center_PL_x",
+            "value": "88000",
+            "unit": "um"
+          },
+          {
+            "name": "center_PL_y",
+            "value": "20000",
+            "unit": "um"
+          },
+          {
+            "name": "center_WL_x",
+            "value": "70000",
+            "unit": "um"
+          },
+          {
+            "name": "center_WL_y",
+            "value": "2000",
+            "unit": "um"
+          },
+          {
+            "name": "connected",
+            "value": "True"
+          },
+          {
+            "name": "debug_mode",
+            "value": "False"
+          },
+          {
+            "name": "insert_y",
+            "value": "20000",
+            "unit": "um"
+          },
+          {
+            "name": "is_at_load",
+            "value": "True"
+          },
+          {
+            "name": "is_inserted",
+            "value": "False"
+          },
+          {
+            "name": "load_x",
+            "value": "85000",
+            "unit": "um"
+          },
+          {
+            "name": "load_y",
+            "value": "100000",
+            "unit": "um"
+          },
+          {
+            "name": "x_max",
+            "value": "93000",
+            "unit": "um"
+          },
+          {
+            "name": "x_min",
+            "value": "0",
+            "unit": "um"
+          },
+          {
+            "name": "x_on_target",
+            "value": "True"
+          },
+          {
+            "name": "x_position",
+            "value": "84968",
+            "unit": "um"
+          },
+          {
+            "name": "x_target",
+            "value": "85000",
+            "unit": "um"
+          },
+          {
+            "name": "y_max",
+            "value": "20500",
+            "unit": "um"
+          },
+          {
+            "name": "y_min",
+            "value": "0",
+            "unit": "um"
+          },
+          {
+            "name": "y_on_target",
+            "value": "True"
+          },
+          {
+            "name": "y_position",
+            "value": "100000",
+            "unit": "um"
+          },
+          {
+            "name": "y_target",
+            "value": "100000",
+            "unit": "um"
+          }
+        ]
+      },
+      {
+        "name": "enviromon",
+        "settings": [
+          {
+            "name": "connected",
+            "value": "False"
+          },
+          {
+            "name": "debug_mode",
+            "value": "False"
+          },
+          {
+            "name": "humidity",
+            "value": "0.0",
+            "unit": "%"
+          },
+          {
+            "name": "log_enable",
+            "value": "True"
+          },
+          {
+            "name": "log_file",
+            "value": "enviromon_log_{date}.txt"
+          },
+          {
+            "name": "log_interval",
+            "value": "5.0",
+            "unit": "s"
+          },
+          {
+            "name": "port",
+            "value": "COM5"
+          },
+          {
+            "name": "temperature",
+            "value": "0.0",
+            "unit": "C"
+          }
+        ]
+      },
+      {
+        "name": "mf_crucible_spinbot",
+        "settings": [
+          {
+            "name": "batch_id",
+            "value": "ahalder_Batch 160_0sybgaqhk9yz5000gqv9r0p4x8"
+          },
+          {
+            "name": "comments",
+            "value": "add any desired comments here (optional)"
+          },
+          {
+            "name": "connected",
+            "value": "True"
+          },
+          {
+            "name": "debug_mode",
+            "value": "False"
+          },
+          {
+            "name": "email",
+            "value": "ahalder@lbl.gov"
+          },
+          {
+            "name": "orcid",
+            "value": "0000-0002-5223-2861"
+          },
+          {
+            "name": "proposal",
+            "value": "MFUSER_ahalder (InternalResearch)"
+          },
+          {
+            "name": "session_name",
+            "value": "Batch 160"
+          },
+          {
+            "name": "tags",
+            "value": "list,tags,separated,by,commas (optional)"
+          },
+          {
+            "name": "user_name",
+            "value": "Ansuman Halder"
+          }
+        ]
+      },
+      {
+        "name": "pl_spec",
+        "settings": [
+          {
+            "name": "connected",
+            "value": "True"
+          },
+          {
+            "name": "debug_mode",
+            "value": "False"
+          },
+          {
+            "name": "int_time",
+            "value": "1.0",
+            "unit": "s"
+          },
+          {
+            "name": "serial_num",
+            "value": "FLMS14212"
+          }
+        ]
+      },
+      {
+        "name": "spinbot_comm",
+        "settings": [
+          {
+            "name": "IsSampleLoaded",
+            "value": "False"
+          },
+          {
+            "name": "connected",
+            "value": "False"
+          },
+          {
+            "name": "debug_mode",
+            "value": "False"
+          },
+          {
+            "name": "host",
+            "value": "localhost"
+          }
+        ]
+      },
+      {
+        "name": "tec_8way_plc",
+        "settings": [
+          {
+            "name": "DataXfer_state",
+            "value": "0"
+          },
+          {
+            "name": "HeaterA_is_cooling",
+            "value": "False"
+          },
+          {
+            "name": "HeaterA_is_heating",
+            "value": "False"
+          },
+          {
+            "name": "HeaterA_pid_output",
+            "value": "0"
+          },
+          {
+            "name": "HeaterA_pid_output_mag",
+            "value": "0"
+          },
+          {
+            "name": "HeaterA_program_counter",
+            "value": "0"
+          },
+          {
+            "name": "HeaterA_program_halt",
+            "value": "False"
+          },
+          {
+            "name": "HeaterA_program_len",
+            "value": "0"
+          },
+          {
+            "name": "HeaterA_program_run",
+            "value": "False"
+          },
+          {
+            "name": "HeaterA_pwm_cooler",
+            "value": "0"
+          },
+          {
+            "name": "HeaterA_pwm_heater",
+            "value": "0"
+          },
+          {
+            "name": "HeaterA_set_point",
+            "value": "30.0",
+            "unit": "C"
+          },
+          {
+            "name": "HeaterA_temperature",
+            "value": "0.0",
+            "unit": "C"
+          },
+          {
+            "name": "HeaterB_is_cooling",
+            "value": "False"
+          },
+          {
+            "name": "HeaterB_is_heating",
+            "value": "False"
+          },
+          {
+            "name": "HeaterB_pid_output",
+            "value": "0"
+          },
+          {
+            "name": "HeaterB_pid_output_mag",
+            "value": "0"
+          },
+          {
+            "name": "HeaterB_program_counter",
+            "value": "0"
+          },
+          {
+            "name": "HeaterB_program_halt",
+            "value": "False"
+          },
+          {
+            "name": "HeaterB_program_len",
+            "value": "0"
+          },
+          {
+            "name": "HeaterB_program_run",
+            "value": "False"
+          },
+          {
+            "name": "HeaterB_pwm_cooler",
+            "value": "0"
+          },
+          {
+            "name": "HeaterB_pwm_heater",
+            "value": "0"
+          },
+          {
+            "name": "HeaterB_set_point",
+            "value": "30.0",
+            "unit": "C"
+          },
+          {
+            "name": "HeaterB_temperature",
+            "value": "0.0",
+            "unit": "C"
+          },
+          {
+            "name": "HeaterC_is_cooling",
+            "value": "False"
+          },
+          {
+            "name": "HeaterC_is_heating",
+            "value": "False"
+          },
+          {
+            "name": "HeaterC_pid_output",
+            "value": "0"
+          },
+          {
+            "name": "HeaterC_pid_output_mag",
+            "value": "0"
+          },
+          {
+            "name": "HeaterC_program_counter",
+            "value": "0"
+          },
+          {
+            "name": "HeaterC_program_halt",
+            "value": "False"
+          },
+          {
+            "name": "HeaterC_program_len",
+            "value": "0"
+          },
+          {
+            "name": "HeaterC_program_run",
+            "value": "False"
+          },
+          {
+            "name": "HeaterC_pwm_cooler",
+            "value": "0"
+          },
+          {
+            "name": "HeaterC_pwm_cooler_freq",
+            "value": "0"
+          },
+          {
+            "name": "HeaterC_pwm_heater",
+            "value": "0"
+          },
+          {
+            "name": "HeaterC_pwm_heater_freq",
+            "value": "0"
+          },
+          {
+            "name": "HeaterC_set_point",
+            "value": "30.0",
+            "unit": "C"
+          },
+          {
+            "name": "HeaterC_temperature",
+            "value": "0.0",
+            "unit": "C"
+          },
+          {
+            "name": "HeaterD_is_cooling",
+            "value": "False"
+          },
+          {
+            "name": "HeaterD_is_heating",
+            "value": "False"
+          },
+          {
+            "name": "HeaterD_pid_output",
+            "value": "0"
+          },
+          {
+            "name": "HeaterD_pid_output_mag",
+            "value": "0"
+          },
+          {
+            "name": "HeaterD_program_counter",
+            "value": "0"
+          },
+          {
+            "name": "HeaterD_program_halt",
+            "value": "False"
+          },
+          {
+            "name": "HeaterD_program_len",
+            "value": "0"
+          },
+          {
+            "name": "HeaterD_program_run",
+            "value": "False"
+          },
+          {
+            "name": "HeaterD_pwm_cooler",
+            "value": "0"
+          },
+          {
+            "name": "HeaterD_pwm_cooler_freq",
+            "value": "0"
+          },
+          {
+            "name": "HeaterD_pwm_heater",
+            "value": "0"
+          },
+          {
+            "name": "HeaterD_pwm_heater_freq",
+            "value": "0"
+          },
+          {
+            "name": "HeaterD_set_point",
+            "value": "30.0",
+            "unit": "C"
+          },
+          {
+            "name": "HeaterD_temperature",
+            "value": "0.0",
+            "unit": "C"
+          },
+          {
+            "name": "HeaterE_is_cooling",
+            "value": "False"
+          },
+          {
+            "name": "HeaterE_is_heating",
+            "value": "False"
+          },
+          {
+            "name": "HeaterE_pid_output",
+            "value": "0"
+          },
+          {
+            "name": "HeaterE_pid_output_mag",
+            "value": "0"
+          },
+          {
+            "name": "HeaterE_program_counter",
+            "value": "0"
+          },
+          {
+            "name": "HeaterE_program_halt",
+            "value": "False"
+          },
+          {
+            "name": "HeaterE_program_len",
+            "value": "0"
+          },
+          {
+            "name": "HeaterE_program_run",
+            "value": "False"
+          },
+          {
+            "name": "HeaterE_pwm_cooler",
+            "value": "0"
+          },
+          {
+            "name": "HeaterE_pwm_cooler_freq",
+            "value": "0"
+          },
+          {
+            "name": "HeaterE_pwm_heater",
+            "value": "0"
+          },
+          {
+            "name": "HeaterE_pwm_heater_freq",
+            "value": "0"
+          },
+          {
+            "name": "HeaterE_set_point",
+            "value": "30.0",
+            "unit": "C"
+          },
+          {
+            "name": "HeaterE_temperature",
+            "value": "0.0",
+            "unit": "C"
+          },
+          {
+            "name": "HeaterF_is_cooling",
+            "value": "False"
+          },
+          {
+            "name": "HeaterF_is_heating",
+            "value": "False"
+          },
+          {
+            "name": "HeaterF_pid_output",
+            "value": "0"
+          },
+          {
+            "name": "HeaterF_pid_output_mag",
+            "value": "0"
+          },
+          {
+            "name": "HeaterF_program_counter",
+            "value": "0"
+          },
+          {
+            "name": "HeaterF_program_halt",
+            "value": "False"
+          },
+          {
+            "name": "HeaterF_program_len",
+            "value": "0"
+          },
+          {
+            "name": "HeaterF_program_run",
+            "value": "False"
+          },
+          {
+            "name": "HeaterF_pwm_cooler",
+            "value": "0"
+          },
+          {
+            "name": "HeaterF_pwm_cooler_freq",
+            "value": "0"
+          },
+          {
+            "name": "HeaterF_pwm_heater",
+            "value": "0"
+          },
+          {
+            "name": "HeaterF_pwm_heater_freq",
+            "value": "0"
+          },
+          {
+            "name": "HeaterF_set_point",
+            "value": "30.0",
+            "unit": "C"
+          },
+          {
+            "name": "HeaterF_temperature",
+            "value": "0.0",
+            "unit": "C"
+          },
+          {
+            "name": "HeaterG_is_cooling",
+            "value": "False"
+          },
+          {
+            "name": "HeaterG_is_heating",
+            "value": "False"
+          },
+          {
+            "name": "HeaterG_pid_output",
+            "value": "0"
+          },
+          {
+            "name": "HeaterG_pid_output_mag",
+            "value": "0"
+          },
+          {
+            "name": "HeaterG_program_counter",
+            "value": "0"
+          },
+          {
+            "name": "HeaterG_program_halt",
+            "value": "False"
+          },
+          {
+            "name": "HeaterG_program_len",
+            "value": "0"
+          },
+          {
+            "name": "HeaterG_program_run",
+            "value": "False"
+          },
+          {
+            "name": "HeaterG_pwm_cooler",
+            "value": "0"
+          },
+          {
+            "name": "HeaterG_pwm_cooler_freq",
+            "value": "0"
+          },
+          {
+            "name": "HeaterG_pwm_heater",
+            "value": "0"
+          },
+          {
+            "name": "HeaterG_pwm_heater_freq",
+            "value": "0"
+          },
+          {
+            "name": "HeaterG_set_point",
+            "value": "30.0",
+            "unit": "C"
+          },
+          {
+            "name": "HeaterG_temperature",
+            "value": "0.0",
+            "unit": "C"
+          },
+          {
+            "name": "HeaterH_is_cooling",
+            "value": "False"
+          },
+          {
+            "name": "HeaterH_is_heating",
+            "value": "False"
+          },
+          {
+            "name": "HeaterH_pid_output",
+            "value": "0"
+          },
+          {
+            "name": "HeaterH_pid_output_mag",
+            "value": "0"
+          },
+          {
+            "name": "HeaterH_program_counter",
+            "value": "0"
+          },
+          {
+            "name": "HeaterH_program_halt",
+            "value": "False"
+          },
+          {
+            "name": "HeaterH_program_len",
+            "value": "0"
+          },
+          {
+            "name": "HeaterH_program_run",
+            "value": "False"
+          },
+          {
+            "name": "HeaterH_pwm_cooler",
+            "value": "0"
+          },
+          {
+            "name": "HeaterH_pwm_cooler_freq",
+            "value": "0"
+          },
+          {
+            "name": "HeaterH_pwm_heater",
+            "value": "0"
+          },
+          {
+            "name": "HeaterH_pwm_heater_freq",
+            "value": "0"
+          },
+          {
+            "name": "HeaterH_set_point",
+            "value": "30.0",
+            "unit": "C"
+          },
+          {
+            "name": "HeaterH_temperature",
+            "value": "0.0",
+            "unit": "C"
+          },
+          {
+            "name": "connected",
+            "value": "False"
+          },
+          {
+            "name": "debug_mode",
+            "value": "False"
+          },
+          {
+            "name": "ip_address",
+            "value": "192.168.27.152"
+          }
+        ]
+      },
+      {
+        "name": "wl_spec",
+        "settings": [
+          {
+            "name": "connected",
+            "value": "True"
+          },
+          {
+            "name": "debug_mode",
+            "value": "False"
+          },
+          {
+            "name": "int_time",
+            "value": "0.001",
+            "unit": "s"
+          },
+          {
+            "name": "serial_num",
+            "value": "FLMS12833"
+          }
+        ]
+      },
+      {
+        "name": "x_under_stage",
+        "settings": [
+          {
+            "name": "connected",
+            "value": "True"
+          },
+          {
+            "name": "debug_mode",
+            "value": "False"
+          },
+          {
+            "name": "fault",
+            "value": "False"
+          },
+          {
+            "name": "feed_constant",
+            "value": "12500",
+            "unit": "um/revs"
+          },
+          {
+            "name": "feed_revs",
+            "value": "1"
+          },
+          {
+            "name": "go_on_new_target",
+            "value": "True"
+          },
+          {
+            "name": "home_acc",
+            "value": "100",
+            "unit": "um/s2"
+          },
+          {
+            "name": "home_velocity",
+            "value": "500",
+            "unit": "um/s"
+          },
+          {
+            "name": "home_velocity2",
+            "value": "100",
+            "unit": "um/s"
+          },
+          {
+            "name": "initialize_on_connect",
+            "value": "True"
+          },
+          {
+            "name": "internal_limit_active",
+            "value": "False"
+          },
+          {
+            "name": "ip_address",
+            "value": "192.168.27.40"
+          },
+          {
+            "name": "operating_mode",
+            "value": "1"
+          },
+          {
+            "name": "operation_enabled",
+            "value": "True"
+          },
+          {
+            "name": "position",
+            "value": "84968",
+            "unit": "um"
+          },
+          {
+            "name": "profile_acc",
+            "value": "2000",
+            "unit": "um/s2"
+          },
+          {
+            "name": "profile_velocity",
+            "value": "8000",
+            "unit": "um/s"
+          },
+          {
+            "name": "quick_stop",
+            "value": "True"
+          },
+          {
+            "name": "ready_to_sw_on",
+            "value": "True"
+          },
+          {
+            "name": "remote_enable",
+            "value": "True"
+          },
+          {
+            "name": "switch_on_disabled",
+            "value": "False"
+          },
+          {
+            "name": "switched_on",
+            "value": "True"
+          },
+          {
+            "name": "target_pos",
+            "value": "85000",
+            "unit": "um"
+          },
+          {
+            "name": "target_reached",
+            "value": "True"
+          },
+          {
+            "name": "voltage_enable",
+            "value": "False"
+          },
+          {
+            "name": "warning",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "y_over_stage",
+        "settings": [
+          {
+            "name": "connected",
+            "value": "True"
+          },
+          {
+            "name": "debug_mode",
+            "value": "False"
+          },
+          {
+            "name": "fault",
+            "value": "False"
+          },
+          {
+            "name": "feed_constant",
+            "value": "2500",
+            "unit": "um/revs"
+          },
+          {
+            "name": "feed_revs",
+            "value": "1"
+          },
+          {
+            "name": "go_on_new_target",
+            "value": "True"
+          },
+          {
+            "name": "home_acc",
+            "value": "500",
+            "unit": "um/s2"
+          },
+          {
+            "name": "home_velocity",
+            "value": "2000",
+            "unit": "um/s"
+          },
+          {
+            "name": "home_velocity2",
+            "value": "500",
+            "unit": "um/s"
+          },
+          {
+            "name": "initialize_on_connect",
+            "value": "True"
+          },
+          {
+            "name": "internal_limit_active",
+            "value": "False"
+          },
+          {
+            "name": "ip_address",
+            "value": "192.168.27.41"
+          },
+          {
+            "name": "operating_mode",
+            "value": "1"
+          },
+          {
+            "name": "operation_enabled",
+            "value": "True"
+          },
+          {
+            "name": "position",
+            "value": "100000",
+            "unit": "um"
+          },
+          {
+            "name": "profile_acc",
+            "value": "3000",
+            "unit": "um/s2"
+          },
+          {
+            "name": "profile_velocity",
+            "value": "12000",
+            "unit": "um/s"
+          },
+          {
+            "name": "quick_stop",
+            "value": "True"
+          },
+          {
+            "name": "ready_to_sw_on",
+            "value": "True"
+          },
+          {
+            "name": "remote_enable",
+            "value": "True"
+          },
+          {
+            "name": "switch_on_disabled",
+            "value": "False"
+          },
+          {
+            "name": "switched_on",
+            "value": "True"
+          },
+          {
+            "name": "target_pos",
+            "value": "100000",
+            "unit": "um"
+          },
+          {
+            "name": "target_reached",
+            "value": "True"
+          },
+          {
+            "name": "voltage_enable",
+            "value": "False"
+          },
+          {
+            "name": "warning",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "zwo_camera",
+        "settings": [
+          {
+            "name": "AntiDewHeater",
+            "value": "False"
+          },
+          {
+            "name": "AutoExpMaxExpMS",
+            "value": "29996",
+            "unit": "ms"
+          },
+          {
+            "name": "AutoExpMaxGain",
+            "value": "285"
+          },
+          {
+            "name": "AutoExpTargetBrightness",
+            "value": "100"
+          },
+          {
+            "name": "BandWidth",
+            "value": "80",
+            "unit": "%"
+          },
+          {
+            "name": "BandWidth_auto",
+            "value": "True"
+          },
+          {
+            "name": "CoolPowerPerc",
+            "value": "0",
+            "unit": "%"
+          },
+          {
+            "name": "CoolerOn",
+            "value": "False"
+          },
+          {
+            "name": "Exposure",
+            "value": "4000000",
+            "unit": "us"
+          },
+          {
+            "name": "Exposure_auto",
+            "value": "False"
+          },
+          {
+            "name": "Flip",
+            "value": "1"
+          },
+          {
+            "name": "GPS",
+            "value": "False"
+          },
+          {
+            "name": "Gain",
+            "value": "285"
+          },
+          {
+            "name": "Gain_auto",
+            "value": "False"
+          },
+          {
+            "name": "HardwareBin",
+            "value": "False"
+          },
+          {
+            "name": "HighSpeedMode",
+            "value": "False"
+          },
+          {
+            "name": "MonoBin",
+            "value": "False"
+          },
+          {
+            "name": "Offset",
+            "value": "4"
+          },
+          {
+            "name": "TargetTemp",
+            "value": "0",
+            "unit": "C"
+          },
+          {
+            "name": "Temperature",
+            "value": "235",
+            "unit": "C"
+          },
+          {
+            "name": "WB_B",
+            "value": "95",
+            "unit": "%"
+          },
+          {
+            "name": "WB_B_auto",
+            "value": "False"
+          },
+          {
+            "name": "WB_R",
+            "value": "50",
+            "unit": "%"
+          },
+          {
+            "name": "WB_R_auto",
+            "value": "False"
+          },
+          {
+            "name": "cam_id",
+            "value": "0"
+          },
+          {
+            "name": "connected",
+            "value": "True"
+          },
+          {
+            "name": "debug_mode",
+            "value": "False"
+          },
+          {
+            "name": "img_type",
+            "value": "RGB24"
+          },
+          {
+            "name": "live_update",
+            "value": "True"
+          },
+          {
+            "name": "live_update_period",
+            "value": "100",
+            "unit": "ms"
+          },
+          {
+            "name": "name",
+            "value": "ZWO ASI294MC"
+          }
+        ]
+      }
+    ],
+    "measurement": [
+      {
+        "name": "spec_run",
+        "settings": [
+          {
+            "name": "activation",
+            "value": "True"
+          },
+          {
+            "name": "eject_after",
+            "value": "True"
+          },
+          {
+            "name": "photo_enable",
+            "value": "True"
+          },
+          {
+            "name": "photo_x",
+            "value": "2400",
+            "unit": "um"
+          },
+          {
+            "name": "photo_y",
+            "value": "9750",
+            "unit": "um"
+          },
+          {
+            "name": "pl_repeats",
+            "value": "3"
+          },
+          {
+            "name": "pl_x_center",
+            "value": "87500",
+            "unit": "um"
+          },
+          {
+            "name": "pl_x_dark",
+            "value": "70000",
+            "unit": "um"
+          },
+          {
+            "name": "pl_x_max",
+            "value": "91000",
+            "unit": "um"
+          },
+          {
+            "name": "pl_x_min",
+            "value": "84000",
+            "unit": "um"
+          },
+          {
+            "name": "pl_x_num",
+            "value": "8"
+          },
+          {
+            "name": "pl_x_ref",
+            "value": "30000",
+            "unit": "um"
+          },
+          {
+            "name": "pl_x_span",
+            "value": "7000",
+            "unit": "um"
+          },
+          {
+            "name": "pl_x_step",
+            "value": "1000",
+            "unit": "um"
+          },
+          {
+            "name": "pl_y",
+            "value": "18000",
+            "unit": "um"
+          },
+          {
+            "name": "profile",
+            "value": "False"
+          },
+          {
+            "name": "progress",
+            "value": "50.0",
+            "unit": "%"
+          },
+          {
+            "name": "run_state",
+            "value": "run_thread_run"
+          },
+          {
+            "name": "sample_position",
+            "value": "1"
+          },
+          {
+            "name": "wl_ref_int_time",
+            "value": "-1.0",
+            "unit": "s"
+          },
+          {
+            "name": "wl_repeats",
+            "value": "10"
+          },
+          {
+            "name": "wl_x_center",
+            "value": "70500",
+            "unit": "um"
+          },
+          {
+            "name": "wl_x_dark",
+            "value": "55000",
+            "unit": "um"
+          },
+          {
+            "name": "wl_x_max",
+            "value": "74000",
+            "unit": "um"
+          },
+          {
+            "name": "wl_x_min",
+            "value": "67000",
+            "unit": "um"
+          },
+          {
+            "name": "wl_x_num",
+            "value": "8"
+          },
+          {
+            "name": "wl_x_ref",
+            "value": "30000",
+            "unit": "um"
+          },
+          {
+            "name": "wl_x_span",
+            "value": "7000",
+            "unit": "um"
+          },
+          {
+            "name": "wl_x_step",
+            "value": "1000",
+            "unit": "um"
+          },
+          {
+            "name": "wl_y",
+            "value": "5000",
+            "unit": "um"
+          }
+        ],
+        "datasets": [
+          {
+            "name": "adj_photo",
+            "data": "test1.h5#/measurement/spec_run/adj_photo"
+          },
+          {
+            "name": "adj_photo_exposure",
+            "data": "test1.h5#/measurement/spec_run/adj_photo_exposure"
+          },
+          {
+            "name": "dark_photo",
+            "data": "test1.h5#/measurement/spec_run/dark_photo"
+          },
+          {
+            "name": "photo",
+            "data": "test1.h5#/measurement/spec_run/photo"
+          },
+          {
+            "name": "pl_dark_int_time",
+            "data": "test1.h5#/measurement/spec_run/pl_dark_int_time"
+          },
+          {
+            "name": "pl_dark_spectrum",
+            "data": "test1.h5#/measurement/spec_run/pl_dark_spectrum"
+          },
+          {
+            "name": "pl_ref_int_time",
+            "data": "test1.h5#/measurement/spec_run/pl_ref_int_time"
+          },
+          {
+            "name": "pl_ref_spectrum",
+            "data": "test1.h5#/measurement/spec_run/pl_ref_spectrum"
+          },
+          {
+            "name": "pl_spectra",
+            "data": "test1.h5#/measurement/spec_run/pl_spectra"
+          },
+          {
+            "name": "pl_spectra_corrected",
+            "data": "test1.h5#/measurement/spec_run/pl_spectra_corrected"
+          },
+          {
+            "name": "pl_spectra_energy_transform",
+            "data": "test1.h5#/measurement/spec_run/pl_spectra_energy_transform"
+          },
+          {
+            "name": "pl_spectra_int_times",
+            "data": "test1.h5#/measurement/spec_run/pl_spectra_int_times"
+          },
+          {
+            "name": "pl_wls",
+            "data": "test1.h5#/measurement/spec_run/pl_wls"
+          },
+          {
+            "name": "pl_x_array",
+            "data": "test1.h5#/measurement/spec_run/pl_x_array"
+          },
+          {
+            "name": "wl_dark_int_time",
+            "data": "test1.h5#/measurement/spec_run/wl_dark_int_time"
+          },
+          {
+            "name": "wl_dark_spectrum",
+            "data": "test1.h5#/measurement/spec_run/wl_dark_spectrum"
+          },
+          {
+            "name": "wl_ref_int_time",
+            "data": "test1.h5#/measurement/spec_run/wl_ref_int_time"
+          },
+          {
+            "name": "wl_ref_spectrum",
+            "data": "test1.h5#/measurement/spec_run/wl_ref_spectrum"
+          },
+          {
+            "name": "wl_spectra",
+            "data": "test1.h5#/measurement/spec_run/wl_spectra"
+          },
+          {
+            "name": "wl_spectra_corrected",
+            "data": "test1.h5#/measurement/spec_run/wl_spectra_corrected"
+          },
+          {
+            "name": "wl_spectra_energy_transform",
+            "data": "test1.h5#/measurement/spec_run/wl_spectra_energy_transform"
+          },
+          {
+            "name": "wl_spectra_int_times",
+            "data": "test1.h5#/measurement/spec_run/wl_spectra_int_times"
+          },
+          {
+            "name": "wl_wls",
+            "data": "test1.h5#/measurement/spec_run/wl_wls"
+          },
+          {
+            "name": "wl_x_array",
+            "data": "test1.h5#/measurement/spec_run/wl_x_array"
+          }
+        ]
+      }
+    ]
+  },
+  "metadata": {}
+}

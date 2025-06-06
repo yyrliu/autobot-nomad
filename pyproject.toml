@@ -1,0 +1,12 @@
+[project]
+name = "nomad"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "nomad-lab[parsing]",
+    "numpy~=1.26",
+    "h5py~=3.14",
+    "ipykernel>=6.29.5",
+]

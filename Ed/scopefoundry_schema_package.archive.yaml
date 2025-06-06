@@ -1,0 +1,103 @@
+definitions:
+  name: ScopeFoundry
+  section_definitions:
+  - base_sections:
+    - nomad.datamodel.data.EntryData
+    name: ScopeFoundryH5
+    quantities:
+    - description: HDF5 file
+      m_annotations:
+        eln:
+        - component: FileEditQuantity
+      name: h5_file
+      type:
+        type_data: str
+        type_kind: python
+    - m_annotations:
+        display:
+        - visible: true
+        eln:
+        - overview: true
+      name: app_name
+      type:
+        type_data: str
+        type_kind: python
+    sub_sections:
+    - description: list of configuration for app
+      name: app_settings
+      repeats: true
+      sub_section: /definitions/section_definitions/3
+    - description: Hardware Components
+      m_annotations:
+        display:
+        - visible: true
+      name: hardware
+      repeats: true
+      sub_section: /definitions/section_definitions/1
+    - description: Measurements (usually only one per h5)
+      m_annotations:
+        display:
+        - visible: true
+        eln:
+        - overview: true
+      name: measurement
+      repeats: true
+      sub_section: /definitions/section_definitions/2
+  - base_sections:
+    - nomad.datamodel.data.EntryData
+    name: ScopeFoundryHW
+    quantities:
+    - name: name
+      type:
+        type_data: str
+        type_kind: python
+    sub_sections:
+    - description: list of configuration for hardware
+      name: settings
+      repeats: true
+      sub_section: /definitions/section_definitions/3
+  - base_sections:
+    - nomad.datamodel.data.EntryData
+    name: ScopeFoundryMeasurement
+    quantities:
+    - name: name
+      type:
+        type_data: str
+        type_kind: python
+    sub_sections:
+    - description: list of configuration for measurement
+      name: settings
+      repeats: true
+      sub_section: /definitions/section_definitions/3
+    - description: H5 Datasets collected during measurement
+      name: datasets
+      repeats: true
+      sub_section: /definitions/section_definitions/4
+  - base_sections:
+    - nomad.datamodel.data.EntryData
+    name: SFLoggedQuantity
+    quantities:
+    - name: name
+      type:
+        type_data: str
+        type_kind: python
+    - name: value
+      type:
+        type_data: str
+        type_kind: python
+    - name: unit
+      type:
+        type_data: str
+        type_kind: python
+  - base_sections:
+    - nomad.datamodel.data.ArchiveSection
+    name: ScopeFoundryMeasurementData
+    quantities:
+    - name: name
+      type:
+        type_data: str
+        type_kind: python
+    - name: data
+      type:
+        type_data: nomad.datamodel.hdf5.HDF5Reference
+        type_kind: custom

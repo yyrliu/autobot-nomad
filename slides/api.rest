@@ -1,0 +1,28 @@
+POST https://nomad-lab.eu/prod/v1/api/v1/entries/query HTTP/1.1
+content-type: application/json
+
+{
+  "owner": "visible",
+  "query": {
+    "and": [
+      {
+        "data.ref.DOI_number#perovskite_solar_cell_database.schema.PerovskiteSolarCell:any": [
+          "10.1021/acsnano.7b02015"
+        ]
+      },
+      {
+        "section_defs.definition_qualified_name:all": [
+          "perovskite_solar_cell_database.schema.PerovskiteSolarCell"
+        ]
+      }
+    ]
+  },
+  "required": {
+    "include": [
+      "data.perovskite_deposition.thermal_annealing_temperature#perovskite_solar_cell_database.schema.PerovskiteSolarCell",
+      "data.perovskite_deposition.thermal_annealing_time#perovskite_solar_cell_database.schema.PerovskiteSolarCell",
+      "results.properties.optoelectronic.solar_cell.efficiency",
+      "data.perovskite_deposition.thermal_annealing_temperature#perovskite_solar_cell_database.schema.PerovskiteSolarCell"
+    ]
+  }
+}
