@@ -1,0 +1,47 @@
+@startuml
+' ref: datamodel.metainfo.basesections (v1)
+' attributes with asterisk (*) are built-in attributes of NOMAD base sections
+
+Class PerovskiteFilmSynthesis(SynthesisMethod) {
+  +instruments*: InstrumentReference
+  +samples*: CompositeSystemReference
+  +steps*: [ProcessStep]
+}
+
+Class AnnealingStep(ProcessStep) {
+  +duration*: float, unit: sec
+  +temperature_steps: [float], unit: °C
+  +step_durations: [float], unit: sec
+  +slops: [float], unit: °C/sec
+}
+
+Class SpinCoatingStep(ProcessStep) {
+  +duration*: float, unit: sec
+  +percursor: CompositeSystemReference|PerovskiteCompositionSectionReference
+  +solvent: CompositeSystemReference
+  +rpm_steps: [float], unit: rpm
+  +step_durations: [float], unit: sec
+  +accelerations: [float], unit: rpm/sec
+  +dispense_profile: HamiltonDispenseProfileReference
+}
+
+/'Class'/
+
+Class SimpleSpinCoatingStep {}
+
+Class QuechedSpinCoatingStep {
+  +antisolvent: CompositeSystemReference
+  +antisolvent_dispense_delay: float, unit: sec
+  +antisolvent_dispense_profile: HamiltonDispenseProfileReference
+}
+
+"PerovskiteFilmSynthesis(SynthesisMethod)" "1..1" o-- "1..*" "AnnealingStep(ProcessStep)" : steps
+"PerovskiteFilmSynthesis(SynthesisMethod)" "1..1" o-- "1..*" "SpinCoatingStep(ProcessStep)" : steps
+
+
+"SimpleSpinCoatingStep" -u-|> "SpinCoatingStep(ProcessStep)"
+"QuechedSpinCoatingStep" -u-|> "SpinCoatingStep(ProcessStep)"
+
+/'"SpinCoatingStep(ProcessStep)" --|> "PeroskiteSynthesisStep(ProcessStep)"'/
+
+@enduml

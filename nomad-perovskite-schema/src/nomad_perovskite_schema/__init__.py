@@ -1,0 +1,1 @@
+# This file initializes the nomad_perovskite_schema package.

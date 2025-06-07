@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "nomad-perovskite-schema"
+version = "0.1.0"
+description = "A schema for perovskite film synthesis processes using NOMAD base sections."
+authors = ["Your Name <youremail@example.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/yourusername/nomad-perovskite-schema"
+repository = "https://github.com/yourusername/nomad-perovskite-schema"
+keywords = ["NOMAD", "perovskite", "synthesis", "schema"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+nomad = "^0.14.0"  # Adjust the version as necessary
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
