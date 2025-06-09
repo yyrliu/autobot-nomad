@@ -1,0 +1,331 @@
+definitions:
+  description: Schema package for thin film synthesis processes and experiments.
+  name: thin_film_synthesis
+  section_definitions:
+  - description: Spin ramp profile for spin coating.
+    m_annotations:
+      plotly_graph_object:
+      - data:
+          x: '#time'
+          y: '#speed'
+    name: SpinRamp
+    quantities:
+    - description: Speed of the spin ramp in revolutions per minute.
+      m_annotations:
+        display:
+        - unit: rpm
+        eln:
+        - component: NumberEditQuantity
+          default:
+          - 1000
+          - 2000
+          - 3000
+      name: speed
+      shape:
+      - '*'
+      type:
+        type_data: int
+        type_kind: python
+      unit: revolutions_per_minute
+    - description: Time at each speed in the spin ramp.
+      m_annotations:
+        display:
+        - unit: second
+        eln:
+        - component: NumberEditQuantity
+          default:
+          - 10
+          - 30
+          - 60
+      name: time
+      shape:
+      - '*'
+      type:
+        type_data: int
+        type_kind: python
+      unit: second
+  - description: Linear dispensing pattern for spin coating.
+    m_annotations:
+      eln:
+      - properties:
+          order:
+          - range
+          - speed
+    name: LinearDispensePattern
+    quantities:
+    - description: Range of the linear dispensing pattern from the center.
+      m_annotations:
+        display:
+        - unit: millimeter
+        eln:
+        - component: NumberEditQuantity
+          default: 5.0
+      name: range
+      type:
+        type_data: float
+        type_kind: python
+      unit: millimeter
+    - description: Speed of the dispensing in the linear pattern.
+      m_annotations:
+        eln:
+        - component: NumberEditQuantity
+          default: 1.0
+          maxValue: 1.0
+          minValue: 0
+      name: speed
+      type:
+        type_data: float
+        type_kind: python
+  - description: A profile for dispensing materials in a process step.
+    m_annotations:
+      eln:
+      - properties:
+          order:
+          - volume
+          - delay
+          - rate
+          - height
+          - pattern
+    name: DispenseProfile
+    quantities:
+    - description: Total volume of material to be dispensed.
+      m_annotations:
+        display:
+        - unit: microliter
+        eln:
+        - component: NumberEditQuantity
+          default: 100.0
+      name: volume
+      type:
+        type_data: float
+        type_kind: python
+      unit: microliter
+    - description: Delay before spin coater start spining.
+      m_annotations:
+        display:
+        - unit: second
+        eln:
+        - component: NumberEditQuantity
+          default: 5.0
+      name: delay
+      type:
+        type_data: float
+        type_kind: python
+      unit: second
+    - description: Rate at which the material is dispensed.
+      m_annotations:
+        display:
+        - unit: microliter/second
+        eln:
+        - component: NumberEditQuantity
+          default: 10.0
+      name: rate
+      type:
+        type_data: float
+        type_kind: python
+      unit: microliter / second
+    - description: Height of the dispensing tip above the substrate.
+      m_annotations:
+        display:
+        - unit: millimeter
+        eln:
+        - component: NumberEditQuantity
+          default: 5.0
+      name: height
+      type:
+        type_data: float
+        type_kind: python
+      unit: millimeter
+    - description: Pattern of dispensing
+      m_annotations:
+        eln:
+        - component: EnumEditQuantity
+          default: Static
+      name: pattern
+      type:
+        type_data:
+        - Linear
+        - Static
+        type_kind: enum
+    sub_sections:
+    - description: Details of the linear dispensing pattern if selected.
+      m_annotations:
+        eln:
+        - {}
+      name: pattern_details
+      sub_section: /definitions/section_definitions/1
+  - description: A section for quenching in a process step.
+    m_annotations:
+      eln:
+      - properties:
+          order:
+          - temperature
+          - duration
+    name: Quenching
+    sub_sections:
+    - description: Profile for dispensing materials during the spin coating step.
+      m_annotations:
+        eln:
+        - {}
+      name: dispense_profile
+      sub_section: /definitions/section_definitions/2
+  - base_sections:
+    - nomad.datamodel.metainfo.basesections.v1.ProcessStep
+    description: A process step for spin coating.
+    name: SpinCoatingStep
+    quantities:
+    - description: Name of the spin coating step.
+      m_annotations:
+        eln:
+        - component: EnumEditQuantity
+          default: Spin Coating
+      name: name
+      type:
+        type_data:
+        - Spin Coating
+        - Spin Coating with Quenching
+        type_kind: enum
+    - description: Duration of the spin coating step in seconds.
+      m_annotations:
+        display:
+        - unit: second
+        eln:
+        - component: NumberEditQuantity
+          default: 60
+      name: spin_duration
+      type:
+        type_data: int
+        type_kind: python
+      unit: second
+    sub_sections:
+    - description: Spin ramp profile for the spin coating step.
+      m_annotations:
+        eln:
+        - {}
+      name: spin_ramp
+      sub_section: /definitions/section_definitions/0
+    - description: Profile for dispensing materials during the spin coating step.
+      m_annotations:
+        eln:
+        - {}
+      name: dispense_profile
+      sub_section: /definitions/section_definitions/2
+  - description: Temperature ramp profile for annealing.
+    m_annotations:
+      plotly_graph_object:
+      - data:
+          x: '#time'
+          y: '#temperature'
+    name: TemperatureRamp
+    quantities:
+    - description: Temperature at each step in the ramp.
+      m_annotations:
+        display:
+        - unit: degC
+        eln:
+        - component: NumberEditQuantity
+          default:
+          - 50.0
+          - 100.0
+          - 150.0
+      name: temperature
+      shape:
+      - '*'
+      type:
+        type_data: float
+        type_kind: python
+      unit: degree_Celsius
+    - description: Time at each temperature in the ramp.
+      m_annotations:
+        display:
+        - unit: second
+        eln:
+        - component: NumberEditQuantity
+          default:
+          - 300
+          - 600
+          - 900
+      name: time
+      shape:
+      - '*'
+      type:
+        type_data: int
+        type_kind: python
+      unit: second
+  - base_sections:
+    - nomad.datamodel.metainfo.basesections.v1.ProcessStep
+    description: A process step for hotplate annealing.
+    name: HotplateAnnealingStep
+    quantities:
+    - description: Name of the hotplate annealing step.
+      m_annotations:
+        eln:
+        - component: EnumEditQuantity
+          default: Hotplate Annealing
+      name: name
+      type:
+        type_data:
+        - Hotplate Annealing
+        type_kind: enum
+    - description: Temperature of the hotplate during annealing.
+      m_annotations:
+        display:
+        - unit: degC
+        eln:
+        - component: NumberEditQuantity
+          default: 100.0
+      name: temperature
+      type:
+        type_data: float
+        type_kind: python
+      unit: degree_Celsius
+    - description: Duration of the hotplate annealing step in seconds.
+      m_annotations:
+        display:
+        - unit: second
+        eln:
+        - component: NumberEditQuantity
+          default: 600
+      name: duration
+      type:
+        type_data: int
+        type_kind: python
+      unit: second
+    sub_sections:
+    - description: Temperature ramp profile for the hotplate annealing step.
+      m_annotations:
+        eln:
+        - {}
+      name: temperature_ramp
+      sub_section: /definitions/section_definitions/5
+  - base_sections:
+    - nomad.datamodel.metainfo.basesections.v1.Process
+    description: "A process for synthesizing thin films. samples:\n    - ENL sample"
+    name: ThinFilmSynthesisProcess
+    sub_sections:
+    - m_annotations:
+        eln:
+        - section_type: composite_system
+      name: composite_system
+      sub_section: nomad.datamodel.metainfo.basesections.v1.CompositeSystemReference
+    - m_annotations:
+        eln:
+        - section_type: instrument
+      name: instrument
+      sub_section: nomad.datamodel.metainfo.basesections.v1.InstrumentReference
+  - base_sections:
+    - nomad.datamodel.metainfo.basesections.v1.Experiment
+    description: "A class to represent a thin film synthesis experiment. steps:\n\
+      \    - ProcessStep\n    - MeasurementStep"
+    m_annotations:
+      eln:
+      - section_type: experiment
+        title: Thin Film Synthesis Experiment
+    name: ThinFilmSynthesisExperiment
+    sub_sections:
+    - m_annotations:
+        eln:
+        - section_type: process
+          title: Thin Film Synthesis Process
+      name: process
+      sub_section: /definitions/section_definitions/7
